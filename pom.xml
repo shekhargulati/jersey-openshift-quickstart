@@ -29,6 +29,12 @@
 			<artifactId>jersey-multipart</artifactId>
 			<version>1.17</version>
 		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-servlet</artifactId>
+			<version>1.17</version>
+		</dependency>
+
 	</dependencies>
 	<profiles>
 		<profile>
@@ -38,6 +44,7 @@
 				will need. -->
 			<!-- By default that is to put the resulting archive into the 'deployments' 
 				folder. -->
+
 			<!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
 			<id>openshift</id>
 			<build>
