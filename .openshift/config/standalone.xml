@@ -13,7 +13,7 @@
         <extension module="org.jboss.as.ejb3"/>
         <extension module="org.jboss.as.jacorb"/>
         <extension module="org.jboss.as.jaxr"/>
-        <extension module="org.jboss.as.jaxrs"/>
+        <!-- <extension module="org.jboss.as.jaxrs"/> -->
         <extension module="org.jboss.as.jdr"/>
         <extension module="org.jboss.as.jmx"/>
         <extension module="org.jboss.as.jpa"/>
@@ -237,7 +237,7 @@
             <connection-factory jndi-name="java:jboss/jaxr/ConnectionFactory"/>
             <juddi-server publish-url="http://${env.OPENSHIFT_INTERNAL_IP}:8080/juddi/publish" query-url="http://${env.OPENSHIFT_INTERNAL_IP}:8080/juddi/query"/>
         </subsystem>
-        <subsystem xmlns="urn:jboss:domain:jaxrs:1.0"/>
+        <!-- <subsystem xmlns="urn:jboss:domain:jaxrs:1.0"/> -->
         <subsystem xmlns="urn:jboss:domain:jca:1.1">
             <archive-validation enabled="true" fail-on-error="true" fail-on-warn="false"/>
             <bean-validation enabled="false"/>
