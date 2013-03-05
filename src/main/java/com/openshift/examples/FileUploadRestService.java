@@ -36,7 +36,6 @@ public class FileUploadRestService {
 
 	}
 
-	// save uploaded file to new location
 	private void writeToFile(InputStream uploadedInputStream,
 			String uploadedFileLocation, FormDataContentDisposition fileDetail) {
 
