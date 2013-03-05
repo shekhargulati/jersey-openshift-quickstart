@@ -27,9 +27,8 @@ public class FileUploadRestService {
 			@FormDataParam("file") FormDataContentDisposition fileDetail) {
 
 		String uploadedFileLocation = System.getenv("OPENSHIFT_DATA_DIR");
-
 		// save it
-		writeToFile(uploadedInputStream, uploadedFileLocation);
+		writeToFile(uploadedInputStream, uploadedFileLocation,fileDetail);
 
 		String output = "File uploaded to : " + uploadedFileLocation;
 
@@ -39,15 +38,16 @@ public class FileUploadRestService {
 
 	// save uploaded file to new location
 	private void writeToFile(InputStream uploadedInputStream,
-			String uploadedFileLocation) {
+			String uploadedFileLocation, FormDataContentDisposition fileDetail) {
 
 		try {
+			String filePath = uploadedFileLocation + fileDetail.getFileName();
 			OutputStream out = new FileOutputStream(new File(
-					uploadedFileLocation));
+					filePath));
 			int read = 0;
 			byte[] bytes = new byte[1024];
 
-			out = new FileOutputStream(new File(uploadedFileLocation));
+			out = new FileOutputStream(new File(filePath));
 			while ((read = uploadedInputStream.read(bytes)) != -1) {
 				out.write(bytes, 0, read);
 			}
